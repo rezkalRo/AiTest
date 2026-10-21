@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="CS 310 web development exam: HTML, CSS, JavaScript, and the Sweet Crumbs project.">
+  <title>Web Development | CS 310 Presentation</title>
+  <style>
+    :root { color-scheme: dark; --bg:#090f1d; --panel:#111b2e; --border:#293751; --muted:#9eadc4; --text:#f5f8ff; --cyan:#6de4d5; --blue:#7aaeff; --violet:#b29bff; --warm:#f0b77a; --shadow: 0 22px 65px rgba(0,0,0,.24); }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse 65% 65% at 82% 14%,#182743 0%,transparent 70%),radial-gradient(ellipse 48% 45% at 15% 90%,#112d35 0%,transparent 70%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;overflow-x:hidden}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}a{color:inherit}.shell{display:grid;grid-template-columns:82px minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;border-right:1px solid rgba(147,172,203,.18);display:flex;flex-direction:column;align-items:center;padding:26px 0 22px;gap:33px;background:rgba(8,14,27,.45);z-index:10;backdrop-filter:blur(15px)}.brand{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;font-size:18px;font-weight:900;color:#0b1824;background:linear-gradient(145deg,var(--cyan),var(--blue));box-shadow:0 10px 25px #45d3c035}.rail{display:flex;flex-direction:column;align-items:center;gap:14px}.rail button{position:relative;width:40px;height:40px;border:1px solid transparent;background:transparent;color:#92a3ba;border-radius:11px;font-size:14px;font-weight:800;transition:.2s}.rail button:hover{color:#fff;background:#26364e}.rail button.active{background:rgba(109,228,213,.15);border-color:rgba(109,228,213,.45);color:var(--cyan)}.rail button.active:before{content:"";position:absolute;left:-21px;top:10px;height:18px;width:3px;border-radius:4px;background:var(--cyan)}.side-bottom{margin-top:auto;writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;font-weight:800;letter-spacing:.22em;color:#6d7e98}.workspace{min-width:0;min-height:100vh;display:flex;flex-direction:column}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px clamp(22px,4.6vw,82px) 12px;z-index:1}.eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.19em;text-transform:uppercase;font-weight:900;color:var(--muted)}.eyebrow .dot{height:7px;width:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}.top-actions{display:flex;align-items:center;gap:9px}.ghost{border:1px solid rgba(173,194,219,.26);background:rgba(21,33,54,.52);color:#e6efff;border-radius:10px;padding:10px 13px;font-size:12px;font-weight:750;transition:.15s}.ghost:hover{border-color:var(--cyan);background:rgba(40,64,79,.7)}.timepill{display:flex;align-items:center;gap:9px;padding:10px 15px;border:1px solid rgba(173,194,219,.16);border-radius:11px;color:#aebcd0;background:rgba(14,25,43,.55);font-variant-numeric:tabular-nums;font-size:12px}.timepill strong{color:#fff;font-size:13px}.stage{flex:1;display:flex;flex-direction:column;min-width:0}.slide{display:none;width:100%;flex:1;min-width:0;padding:clamp(14px,2.3vw,34px) clamp(22px,4.6vw,82px) 18px;animation:rise .32s ease both;max-width:1650px;margin:auto}.slide.active{display:flex;flex-direction:column}.slide-header{display:flex;align-items:center;gap:12px;margin-bottom:17px}.kicker{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}.kicker:before{content:"";display:block;width:22px;height:2px;background:currentColor}.step-count{font-size:11px;font-weight:700;letter-spacing:.06em;color:#657890}.slide h1{font-size:clamp(43px,5.8vw,88px);line-height:1.03;letter-spacing:-.065em;font-weight:850;margin:12px 0 18px}.slide h2{font-size:clamp(36px,4.4vw,64px);line-height:1.08;letter-spacing:-.058em;font-weight:850;margin:6px 0 12px}.title-accent{background:linear-gradient(105deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}.subhead{font-size:clamp(15px,1.25vw,19px);line-height:1.65;color:#b6c5da;max-width:680px;margin:0 0 28px}.content-two{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);gap:clamp(20px,3.1vw,58px);align-items:center;flex:1;min-height:0}.stack{display:flex;flex-direction:column;gap:20px}.hero-text{max-width:770px}.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.hero-tags span{font-size:12px;color:#d2def0;border:1px solid #38506b;padding:9px 12px;border-radius:999px;background:rgba(31,48,71,.55)}.hero-card{border:1px solid rgba(174,194,225,.18);border-radius:25px;background:linear-gradient(155deg,#1b2b44,#101a2b 72%);padding:23px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero-card:after{content:"";position:absolute;inset:auto -15% -70% 25%;height:270px;background:radial-gradient(ellipse,rgba(98,220,211,.18),transparent 65%);pointer-events:none}.browser-top{display:flex;align-items:center;gap:6px;border-bottom:1px solid #2b3b53;padding-bottom:16px;margin-bottom:20px}.circle{width:9px;height:9px;border-radius:50%;background:#fc8185}.circle:nth-child(2){background:#e6c370}.circle:nth-child(3){background:#73c9ad}.address{font-family:ui-monospace,monospace;font-size:11px;margin-left:auto;color:#7f94ad;background:#111c2f;border-radius:7px;padding:7px 10px;border:1px solid #2b3b53}.site-preview{padding:21px 18px 16px;text-align:center;background:#fff9ef;border-radius:14px;color:#65432e;position:relative;isolation:isolate}.site-preview h3{font-size:22px;margin:4px 0}.site-preview p{font-size:12px;margin:4px auto 14px;max-width:250px}.cookies{display:flex;justify-content:center;gap:22px;margin:21px 0}.cookie{height:83px;width:83px;border-radius:50%;background:#c78a53;box-shadow:inset -9px -6px #ad7041;position:relative}.cookie:before,.cookie:after{content:"";position:absolute;background:#65422e;border-radius:50%;width:12px;height:12px;top:19px;left:19px;box-shadow:35px 10px #65422e,12px 38px #65422e}.cookie:after{top:38px;left:44px;width:9px;height:9px;box-shadow:-27px -4px #65422e}.cookie:nth-child(2){transform:rotate(35deg) scale(.92)}.preview-cta{display:inline-flex;background:#a86b3c;color:#fff;padding:10px 16px;font-size:12px;border-radius:6px;font-weight:800}.smallcap{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--muted)}.impact-row{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}.impact{flex:1;min-width:115px;background:rgba(22,35,54,.65);border:1px solid rgba(160,187,220,.15);border-radius:14px;padding:17px}.impact strong{display:block;font-size:25px;letter-spacing:-.05em}.impact span{font-size:11px;color:#9eafc7}.feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.feature{border:1px solid rgba(153,176,207,.16);background:rgba(28,42,63,.6);border-radius:12px;padding:12px 14px;font-size:13px;color:#d3e1f3}.feature b{color:var(--cyan);margin-right:7px}.code-panel{background:#0b1424;border-radius:19px;border:1px solid #364861;overflow:hidden;box-shadow:0 24px 50px #0003;min-width:0}.code-top{display:flex;align-items:center;justify-content:space-between;background:#152338;border-bottom:1px solid #2d3e55;padding:14px 17px}.filelabel{font-size:12px;color:#bcd0e6;font-weight:800;font-family:ui-monospace,monospace}.lang{font-size:10px;color:#6be2d5;letter-spacing:.15em;font-weight:900}.code-panel pre{padding:18px 19px 21px;margin:0;font-size:clamp(11px,1.03vw,14px);line-height:1.68;color:#dce7f8;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}.t-blue{color:#93b8ff}.t-pink{color:#e7aaff}.t-yellow{color:#f5d390}.t-green{color:#84e5c9}.t-gray{color:#718aa6}.micro{font-size:12px;line-height:1.55;color:#8298b2}.demo-card{background:linear-gradient(160deg,rgba(31,49,74,.95),rgba(17,29,47,.93));border:1px solid #34445b;border-radius:21px;padding:24px;box-shadow:var(--shadow)}.demo-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}.demo-title strong{font-size:16px}.live-badge{display:inline-flex;align-items:center;gap:6px;color:#8cedd4;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.live-badge:before{content:"";width:6px;height:6px;background:#88efd1;border-radius:50%}.field-label{font-size:12px;font-weight:800;color:#d0def0;display:block;margin-bottom:7px}.demo-input{width:100%;background:#0e1b2d;border:1px solid #3a4c64;border-radius:10px;padding:12px 13px;color:#fff;font-size:14px}.hint{color:#91a6bc;font-size:12px;line-height:1.6;margin-top:12px}.btn{background:linear-gradient(110deg,#72decf,#7badfb);color:#092237;border:none;padding:12px 17px;border-radius:10px;font-weight:900;transition:.2s;box-shadow:0 7px 21px #57d9c21c}.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}.btn-quiet{background:transparent;border:1px solid #455975;color:#c9d9ee;box-shadow:none}.button-row{display:flex;align-items:center;gap:9px;margin-top:14px;flex-wrap:wrap}.status{margin:14px 0 0;color:#91eed5;font-size:13px;min-height:20px;line-height:1.5}.callout{display:flex;align-items:flex-start;gap:12px;padding:15px 16px;border-radius:12px;background:rgba(109,228,213,.09);border:1px solid rgba(109,228,213,.24);color:#cfece9;font-size:13px;line-height:1.6}.callout .mark{color:var(--cyan);font-weight:900;font-size:18px;line-height:1}.split-preview{display:flex;flex-direction:column;gap:12px}.segmented{display:flex;border:1px solid #3d526b;border-radius:12px;padding:4px;align-self:flex-start;background:#111e31;gap:4px}.segmented button{border:0;border-radius:8px;background:transparent;color:#a7b9cf;padding:8px 15px;font-size:12px;font-weight:800}.segmented button.selected{background:#2b435d;color:#f5feff}.device{background:#faf6ef;color:#65432e;border-radius:14px;border:7px solid #34455d;padding:14px;max-width:100%;transition:width .3s ease;align-self:center;width:100%;min-height:200px;box-shadow:0 15px 25px #0003}.device.mobile{width:245px}.device .tiny-header{font-weight:900;font-size:12px;text-align:center;border-bottom:1px solid #e1d3c1;padding:5px 0 12px}.device-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding-top:14px}.device.mobile .device-fields{grid-template-columns:1fr}.fake-field span{display:block;font-size:9px;font-weight:bold;padding-bottom:5px}.fake-field i{display:block;height:28px;border:1px solid #c8b8a4;border-radius:5px;background:white}.metric-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.metric-chips span{font-size:11px;background:#172a40;border:1px solid #344963;color:#b9d1e9;padding:8px 10px;border-radius:8px}.js-demo{display:grid;grid-template-columns:1fr 1fr;gap:10px}.js-demo .full{grid-column:1/-1}.js-list{margin:15px 0 0;padding-left:19px;font-size:12px;color:#d4e1f0;line-height:1.7;max-height:112px;overflow:auto}.js-list li{padding:2px 0;overflow-wrap:anywhere}.js-count{font-size:11px;color:#8ea9bf}.flowline{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:14px}.flowline span{padding:8px 10px;background:#192b41;color:#bed7ea;border:1px solid #33475e;border-radius:8px;font-size:11px;font-weight:800}.flowline em{font-size:13px;font-style:normal;color:#74e7cd}.outcomes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:17px}.outcome{padding:22px 20px;border:1px solid #30425b;border-radius:16px;background:linear-gradient(155deg,rgba(30,46,70,.8),rgba(18,30,49,.85))}.outcome .no{font-size:12px;letter-spacing:.15em;font-weight:900;color:var(--cyan)}.outcome h3{font-size:19px;line-height:1.2;margin:14px 0 8px}.outcome p{font-size:13px;line-height:1.65;color:#9fb2ca;margin:0}.end-card{background:radial-gradient(ellipse at 95% 0%,#31547877,transparent 55%),linear-gradient(140deg,#1b3450,#132238);border:1px solid #395774;border-radius:22px;padding:27px}.end-card h3{font-size:28px;margin:11px 0;letter-spacing:-.05em}.end-card p{font-size:14px;line-height:1.75;color:#bfcedf;margin:0 0 17px}.external-link{display:inline-flex;align-items:center;gap:7px;color:#83eadc;font-size:13px;font-weight:800;text-decoration:none}.external-link:hover{text-decoration:underline}.bullets{padding:0;list-style:none;margin:15px 0}.bullets li{padding:8px 0;color:#bfcee2;font-size:15px;line-height:1.5}.bullets li:before{content:"↗";color:var(--cyan);margin-right:12px}.footer{display:flex;align-items:center;gap:18px;justify-content:space-between;margin:0 clamp(22px,4.6vw,82px) 18px;padding:17px 0 0;border-top:1px solid rgba(133,159,191,.2)}.progress{min-width:130px;flex:1;max-width:280px;height:4px;background:#25354c;border-radius:20px;overflow:hidden}.progress .bar{height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue));width:20%;transition:width .25s}.foot-left,.foot-right{display:flex;align-items:center;gap:15px}.slide-label{color:#91a4bd;font-size:12px;font-weight:800;white-space:nowrap}.footer .navbutton{background:#203149;border:1px solid #39506e;color:#eaf5ff;width:44px;height:43px;border-radius:10px;font-size:20px;font-weight:600}.footer .navbutton:hover:not(:disabled){background:#345471}.footer .navbutton:disabled{opacity:.34;cursor:not-allowed}.footer .next{min-width:85px;width:auto;padding:0 18px;background:linear-gradient(100deg,#77e4d7,#8bb9ff);border:none;color:#0b2441;font-size:13px;font-weight:900}.kbd{font-size:11px;color:#778ba3}.notes-shade{position:fixed;inset:0;background:#0206109a;z-index:40;display:none}.notes-shade.open{display:block}.notes{position:fixed;inset:0 0 0 auto;max-width:520px;width:min(520px,100%);background:#111d30;border-left:1px solid #3a4c67;box-shadow:-25px 0 70px #0007;transform:translateX(103%);transition:transform .25s;z-index:41;overflow-y:auto;padding:30px clamp(20px,3vw,35px) 42px}.notes.open{transform:translateX(0)}.notes-top{display:flex;justify-content:space-between;align-items:center;gap:15px}.notes h2{font-size:25px;letter-spacing:-.04em}.notes h3{font-size:14px;margin-top:25px;color:#8fe6d7;letter-spacing:.08em;text-transform:uppercase}.notes p{font-size:16px;line-height:1.82;color:#d8e3f2}.notes .qa{background:#1b2a41;border:1px solid #344760;padding:12px 15px;border-radius:10px;margin:10px 0}.notes .qa strong{font-size:13px;color:#fff}.notes .qa p{font-size:13px;margin:5px 0 0;line-height:1.6}.chip{display:inline-block;color:var(--cyan);background:#1d3b43;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800}.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}@keyframes rise{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .slide[data-slide="3"] .code-panel pre{line-height:1.46;padding:13px 19px;font-size:12px}.slide[data-slide="3"] .code-top{padding:10px 17px}.slide[data-slide="3"] .stack{gap:12px}.slide[data-slide="3"] .subhead{margin-bottom:12px}.slide[data-slide="3"] h2{margin-bottom:7px}.slide[data-slide="3"] .demo-card{padding:19px}.slide[data-slide="3"] .slide-header{margin-bottom:9px}
+    @media(max-width:1100px){.content-two{gap:22px}.slide h1{font-size:clamp(43px,6.3vw,70px)}.slide h2{font-size:clamp(34px,4.8vw,56px)}.code-panel pre{font-size:11px}.hero-card{padding:14px}}
+    @media(max-width:780px){.shell{grid-template-columns:1fr}.sidebar{position:static;width:100%;height:65px;flex-direction:row;padding:8px 16px;gap:15px;border-right:0;border-bottom:1px solid #253752}.brand{width:38px;height:38px;font-size:15px;border-radius:11px}.rail{flex-direction:row;gap:3px}.rail button{width:33px;height:33px;font-size:12px}.rail button.active:before{display:none}.side-bottom{display:none}.topbar{padding:18px 20px 9px;gap:8px}.topbar>.eyebrow{min-width:0;flex:1;overflow-wrap:anywhere;letter-spacing:.07em}.topbar .step-count{display:none}.top-actions{gap:6px;flex-shrink:0}.top-actions .ghost{padding:9px 10px}.timepill{padding:8px;font-size:11px}.stage{min-height:calc(100vh - 65px)}.slide{padding:16px 20px 24px}.content-two{grid-template-columns:1fr;align-items:start}.slide h1{font-size:clamp(43px,9vw,64px)}.slide h2{font-size:clamp(36px,8vw,53px)}.slide .subhead{margin-bottom:16px}.hero-card{max-width:620px}.feature-list{margin:6px 0 4px}.footer{margin:0 20px 16px;gap:10px}.kbd{display:none}.outcomes{margin-top:8px}.slide.active{display:flex}.code-panel pre{font-size:12px}.notes{padding:20px}}
+    @media(max-width:430px){.eyebrow{letter-spacing:.08em;font-size:10px}.top-actions .ghost span{display:none}.feature-list,.outcomes{grid-template-columns:1fr}.footer .navbutton{width:42px;min-width:42px}.footer .next{min-width:77px}.slide-label{font-size:11px}.foot-left{gap:8px}.progress{min-width:60px}.js-demo{grid-template-columns:1fr}.js-demo .full{grid-column:auto}.browser-top .address{font-size:9px}.impact{min-width:90px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+    @media print{body{background:white;color:black}.shell{display:block}.sidebar,.topbar,.footer,.notes-shade,.notes,.button-row{display:none!important}.slide{display:block!important;min-height:90vh;page-break-after:always;padding:35px;color:black}.slide h1,.slide h2{color:#17263b}.subhead,.feature,.outcome p{color:#24344a}.demo-card,.code-panel,.outcome,.hero-card{break-inside:avoid}.slide:last-child{page-break-after:auto}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" aria-label="Slide navigation">
+    <div class="brand" title="CS 310">&lt;/&gt;</div>
+    <nav class="rail" aria-label="Choose a slide">
+      <button class="active" data-goto="0" aria-label="Slide 1 Introduction" aria-current="step">01</button>
+      <button data-goto="1" aria-label="Slide 2 HTML">02</button>
+      <button data-goto="2" aria-label="Slide 3 CSS">03</button>
+      <button data-goto="3" aria-label="Slide 4 JavaScript">04</button>
+      <button data-goto="4" aria-label="Slide 5 Why hire me">05</button>
+    </nav>
+    <span class="side-bottom">CS 310 · FALL 2026</span>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="eyebrow"><span class="dot"></span> Introduction to Web Development <span class="step-count">/ Exam presentation</span></div>
+      <div class="top-actions">
+        <button class="timepill" id="timer-reset" type="button" title="Elapsed time — click to reset">⏱ <strong id="timer">00:00</strong></button>
+        <button class="ghost" id="notes-btn" aria-controls="speaker-notes" aria-expanded="false" title="Show speaker notes (N)">▤ <span>Speaker notes</span></button>
+        <button class="ghost" id="fullscreen-btn" title="Fullscreen (F)">⛶ <span>Fullscreen</span></button>
+      </div>
+    </header>
+    <main class="stage" id="stage">
+      <!-- Slide 1 -->
+      <section class="slide active" data-slide="0" aria-label="Introduction slide">
+        <div class="slide-header"><span class="kicker">01 / Introduction</span><span class="step-count">~40 seconds</span></div>
+        <div class="content-two">
+          <div class="hero-text">
+            <p class="smallcap">CS 310 · Final exam presentation</p>
+            <h1>Building for<br><span class="title-accent">the web.</span></h1>
+            <p class="subhead">What I learned about HTML, CSS, and JavaScript — and how I put those skills into practice.</p>
+            <div class="hero-tags"><span>HTML · Structure</span><span>CSS · Design</span><span>JavaScript · Interaction</span></div>
+            <div class="impact-row"><div class="impact"><strong>3</strong><span>core technologies</span></div><div class="impact"><strong>3</strong><span>coursework examples</span></div><div class="impact"><strong>5 min</strong><span>presentation goal</span></div></div>
+          </div>
+          <div class="hero-card" aria-label="Sweet Crumbs project preview">
+            <div class="browser-top"><i class="circle"></i><i class="circle"></i><i class="circle"></i><div class="address">sweet-crumbs / project</div></div>
+            <div class="site-preview"><div class="smallcap" style="color:#895a3d;letter-spacing:.13em">Student website project</div><h3>Sweet Crumbs</h3><p>Fresh cookies, warm smiles, and simple ingredients.</p><div class="cookies"><div class="cookie"></div><div class="cookie"></div></div><span class="preview-cta">See Our Menu →</span></div>
+            <p class="micro" style="margin:15px 2px 0">An original class project built with HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Slide 2 -->
+      <section class="slide" data-slide="1" aria-label="HTML slide" hidden>
+        <div class="slide-header"><span class="kicker">02 / HTML</span><span class="step-count">~55 seconds</span></div>
+        <h2>HTML is the <span class="title-accent">structure.</span></h2>
+        <p class="subhead">I used HTML to create the Sweet Crumbs pages and build a customer information form.</p>
+        <div class="content-two">
+          <div class="stack">
+            <div class="code-panel">
+              <div class="code-top"><span class="filelabel">customer.html · Lab 2</span><span class="lang">HTML</span></div>
+              <pre><code><span class="t-blue">&lt;label</span> <span class="t-yellow">for</span>=<span class="t-green">"email"</span><span class="t-blue">&gt;</span>Email Address<span class="t-blue">&lt;/label&gt;</span>
+<span class="t-blue">&lt;input</span> <span class="t-yellow">type</span>=<span class="t-green">"email"</span>
+       <span class="t-yellow">id</span>=<span class="t-green">"email"</span>
+       <span class="t-yellow">name</span>=<span class="t-green">"email"</span>
+       <span class="t-pink">required</span><span class="t-blue">&gt;</span></code></pre>
+            </div>
+            <div class="feature-list"><div class="feature"><b>01</b> Labels identify fields</div><div class="feature"><b>02</b> Input collects data</div><div class="feature"><b>03</b> Type checks email format</div><div class="feature"><b>04</b> Required prevents blanks</div></div>
+          </div>
+          <div class="demo-card">
+            <div class="demo-title"><strong>Try the HTML form</strong><span class="live-badge">Live example</span></div>
+            <form id="html-demo-form">
+              <label class="field-label" for="demo-email">Email Address <span style="color:#79e2d5">*</span></label>
+              <input class="demo-input" id="demo-email" name="email" type="email" placeholder="name@example.com" required autocomplete="off">
+              <div class="button-row"><button class="btn" type="submit">Submit email →</button></div>
+            </form>
+            <div class="status" id="html-status" role="status"></div>
+            <p class="hint">Try clicking Submit while the field is empty. Your browser prevents the submission because the input is <b>required</b>.</p>
+            <div class="callout"><span class="mark">✦</span><span><b>Key idea:</b> HTML defines the elements. It also offers built-in form validation before JavaScript is involved.</span></div>
+          </div>
+        </div>
+      </section>
+      <!-- Slide 3 -->
+      <section class="slide" data-slide="2" aria-label="CSS slide" hidden>
+        <div class="slide-header"><span class="kicker">03 / CSS</span><span class="step-count">~60 seconds</span></div>
+        <h2>CSS makes it <span class="title-accent">responsive.</span></h2>
+        <p class="subhead">I used colors, spacing, CSS Grid, and media queries to make the same form usable on different screens.</p>
+        <div class="content-two">
+          <div class="stack">
+            <div class="code-panel"><div class="code-top"><span class="filelabel">style.css · Sweet Crumbs</span><span class="lang">CSS</span></div>
+              <pre><code><span class="t-yellow">.form-grid</span> {
+  <span class="t-blue">display</span>: grid;
+  <span class="t-blue">grid-template-columns</span>: 1fr 1fr;
+  <span class="t-blue">gap</span>: 16px;
+}
+
+<span class="t-pink">@media</span> (max-width: <span class="t-green">760px</span>) {
+  <span class="t-yellow">.form-grid</span> {
+    <span class="t-blue">grid-template-columns</span>: 1fr;
+  }
+}</code></pre>
+            </div>
+            <div class="callout"><span class="mark">✦</span><span><b>What it means:</b> Two columns on bigger screens; one column when the screen width is 760px or less.</span></div>
+          </div>
+          <div class="demo-card">
+            <div class="demo-title"><strong>Responsive design preview</strong><span class="live-badge">Interactive</span></div>
+            <div class="split-preview">
+              <div class="segmented" role="group" aria-label="Preview device size"><button id="desktop-btn" class="selected" type="button" aria-pressed="true">▣ Desktop</button><button id="mobile-btn" type="button" aria-pressed="false">▯ Mobile</button></div>
+              <div class="device" id="device"><div class="tiny-header">Sweet Crumbs · Customer Information</div><div class="device-fields"><div class="fake-field"><span>First Name</span><i></i></div><div class="fake-field"><span>Last Name</span><i></i></div><div class="fake-field"><span>Email</span><i></i></div><div class="fake-field"><span>Phone</span><i></i></div></div></div>
+            </div>
+            <div class="metric-chips"><span>Desktop: 2 columns</span><span>Mobile: 1 column</span></div>
+            <p class="hint">Switch the device above to see how a mobile-friendly layout changes.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Slide 4 -->
+      <section class="slide" data-slide="3" aria-label="JavaScript slide" hidden>
+        <div class="slide-header"><span class="kicker">04 / JavaScript</span><span class="step-count">~95 seconds</span></div>
+        <h2>JavaScript adds <span class="title-accent">interaction.</span></h2>
+        <p class="subhead">In Lab 3, I made my customer form respond to clicks, validate fields, store customer objects, and update the DOM.</p>
+        <div class="content-two">
+          <div class="stack">
+            <div class="code-panel"><div class="code-top"><span class="filelabel">script.js · Lab 3 (short excerpt)</span><span class="lang">JS</span></div>
+              <pre><code><span class="t-pink">const</span> customers = [];
+
+submitButton.<span class="t-blue">addEventListener</span>(
+  <span class="t-green">"click"</span>, <span class="t-pink">function</span> (event) {
+    event.<span class="t-blue">preventDefault</span>();
+    <span class="t-pink">if</span> (!form.<span class="t-blue">reportValidity</span>()) <span class="t-pink">return</span>;
+
+    <span class="t-pink">const</span> customer = {
+      id: customers.length + 1,
+      firstName: document.<span class="t-blue">getElementById</span>(
+        <span class="t-green">"first-name"</span>).value.trim()
+    };
+    customers.<span class="t-blue">push</span>(customer);
+  }
+);</code></pre>
+            </div>
+            <div class="flowline" aria-label="JavaScript form process"><span>Click</span><em>→</em><span>Validate</span><em>→</em><span>Object</span><em>→</em><span>Array</span><em>→</em><span>DOM</span></div>
+            <p class="micro">The displayed code is a shortened excerpt of my real Lab 3 file. My original also collects additional fields, logs the array, adds list items, and resets the form.</p>
+          </div>
+          <div class="demo-card">
+            <div class="demo-title"><strong>JavaScript customer demo</strong><span class="live-badge">Working example</span></div>
+            <form id="customer-demo-form" class="js-demo">
+              <div><label class="field-label" for="first-name-demo">First name</label><input class="demo-input" id="first-name-demo" type="text" autocomplete="off" value="John" required></div>
+              <div><label class="field-label" for="last-name-demo">Last name</label><input class="demo-input" id="last-name-demo" type="text" autocomplete="off" value="Smith" required></div>
+              <div class="full"><label class="field-label" for="customer-email-demo">Email address</label><input class="demo-input" id="customer-email-demo" type="email" autocomplete="off" value="john@example.com" required></div>
+              <div class="full button-row" style="margin-top:3px"><button id="customer-submit-demo" type="submit" class="btn">Add customer →</button><button type="button" class="btn btn-quiet" id="clear-demo">Clear list</button></div>
+            </form>
+            <div class="status" id="customer-status" role="status"></div>
+            <div class="demo-title" style="margin:14px 0 4px"><strong style="font-size:13px">Customer list (DOM)</strong><span class="js-count" id="customer-count">0 customers</span></div>
+            <ol class="js-list" id="customer-list-demo"><li id="empty-note" style="color:#8a9ab0;list-style:none;margin-left:-17px">No customer added yet.</li></ol>
+            <p class="hint" style="margin-bottom:0">This demo stores data only in your browser while this page is open — it does not use a database.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Slide 5 -->
+      <section class="slide" data-slide="4" aria-label="Why hire me slide" hidden>
+        <div class="slide-header"><span class="kicker">05 / My value</span><span class="step-count">~55 seconds</span></div>
+        <h2>Why <span class="title-accent">hire me?</span></h2>
+        <p class="subhead">I bring practical coursework experience, problem-solving habits, and a focus on making websites easy to use.</p>
+        <div class="content-two">
+          <div>
+            <div class="outcomes">
+              <div class="outcome"><span class="no">01 / BUILD</span><h3>Real projects</h3><p>Created a multi-page website with customer forms and navigation.</p></div>
+              <div class="outcome"><span class="no">02 / STYLE</span><h3>Responsive design</h3><p>Used CSS Grid and media queries for desktop and mobile layouts.</p></div>
+              <div class="outcome"><span class="no">03 / INTERACT</span><h3>Working features</h3><p>Added event listeners, objects, arrays, and DOM updates with JavaScript.</p></div>
+              <div class="outcome"><span class="no">04 / IMPROVE</span><h3>Testing mindset</h3><p>Debug, retest, and improve features with the user in mind.</p></div>
+            </div>
+          </div>
+          <div class="end-card"><span class="chip">Ready to keep learning</span><h3>Build it. Test it.<br>Make it better.</h3><p>I'm continuing to develop my skills in HTML, CSS, and JavaScript. I understand that good development means more than writing code — it means creating an experience that works for real people.</p><p style="font-weight:800;color:#fff;font-size:19px;margin-bottom:12px">Thank you!</p><a class="external-link" href="https://rezkalro.github.io/sweet-crumbs/" rel="noopener noreferrer" target="_blank">↗ View my Sweet Crumbs website</a><p class="micro" style="font-size:11px;margin-top:17px">A student Web Development project · CS 310</p></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" aria-label="Presentation controls">
+      <div class="foot-left"><span class="slide-label" id="slide-label">01 / 05</span><div class="progress" aria-label="Presentation progress"><div class="bar" id="progress-bar"></div></div></div>
+      <div class="foot-right"><span class="kbd">← → navigate · N notes · F fullscreen</span><button class="navbutton" id="prev" aria-label="Previous slide" disabled>‹</button><button class="navbutton next" id="next" aria-label="Next slide">Next →</button></div>
+    </footer>
+  </div>
+</div>
+<div class="notes-shade" id="notes-shade" aria-hidden="true"></div>
+<aside class="notes" id="speaker-notes" role="dialog" aria-modal="true" aria-label="Speaker notes" aria-hidden="true" tabindex="-1">
+  <div class="notes-top"><span class="kicker">Presenter notes</span><button class="ghost" id="close-notes" aria-label="Close notes">✕ Close</button></div>
+  <h2 id="notes-title">Slide 1 — Introduction</h2>
+  <span class="chip" id="notes-time">0:00–0:40</span>
+  <h3>What to say</h3><div id="notes-script"></div>
+  <h3>Questions to be ready for</h3><div id="notes-qa"></div>
+  <p class="micro" style="margin-top:25px">The slide timer measures total elapsed time. These notes are a guide, so speak naturally rather than reading every word.</p>
+</aside>
+<script>
+(function () {
+  'use strict';
+  const notes = [
+    {title:'Introduction',time:'0:00–0:40',script:`Hello. Today I'm going to talk about what I've learned in Web Development and how I've used those skills in my class projects. The three main technologies I've practiced are HTML, CSS, and JavaScript. HTML creates the structure, CSS controls the appearance, and JavaScript makes the page interactive. One of my main projects is the Sweet Crumbs Cookie Shop website, which helped me connect all three concepts.`,qa:[['What did you build?', 'A multi-page Sweet Crumbs Cookie Shop website with customer forms, styling, and JavaScript interactions.']]},
+    {title:'HTML — Structure',time:'0:40–1:35',script:`HTML stands for HyperText Markup Language. It gives a webpage its structure, including headings, paragraphs, images, navigation, and forms. In my Sweet Crumbs project, I created pages for Home, Menu, Location, and Customer Information. In Lab 2, I built a customer form. The label tells users what to enter, type equals email checks the basic format, and required makes the field mandatory. I also used semantic elements like header, main, section, and footer to organize the website.`,qa:[['What does required do?', 'It makes the field mandatory when the form is submitted.'],['Why type="email"?', 'It enables basic browser email-format checking. It does not fully verify the address exists.'],['What does the ID do?', 'It identifies an element for CSS, JavaScript, and labels.']]},
+    {title:'CSS — Responsive Design',time:'1:35–2:35',script:`CSS stands for Cascading Style Sheets. It controls a site's colors, fonts, spacing, buttons, and layout. I used CSS to give the Sweet Crumbs pages a consistent appearance. I also learned responsive design, meaning the layout adapts to different screen sizes. In this example, I use CSS Grid to show two equal columns on larger screens. A media query changes the form to one column when the viewport is 760 pixels wide or less. This makes it easier for someone to complete the form on a phone.`,qa:[['What does 1fr 1fr mean?', 'Two equally sized columns that divide up the available space.'],['What is a media query?', 'A CSS condition that applies styles only when conditions such as viewport width match.'],['What is responsive design?', 'Building a layout that adapts to different screen sizes.']]},
+    {title:'JavaScript — Interaction',time:'2:35–4:10',script:`JavaScript makes the website interactive instead of just static. In Lab 3, I added an event listener to the customer form. When someone clicks Submit, the function runs. PreventDefault stops the normal form submission, and reportValidity checks the required fields. JavaScript then uses getElementById to read inputs such as name and email. It creates a customer object and adds that object to an array using push. I also use the DOM, or Document Object Model, to create a new list item and show the customer's information on the webpage. Finally, the site shows a confirmation and resets the form. This showed me how JavaScript connects to HTML and CSS.`,qa:[['What is DOM?', 'The Document Object Model is the browser representation of HTML elements that JavaScript can read and change.'],['What is an event listener?', 'Code that waits for an action, such as a button click, then executes a function.'],['What is an object literal?', 'An object written using curly braces with property-value pairs, like firstName and email.'],['What is an array?', 'A collection that can hold many values or objects.'],['Does this save to a database?', 'No. This front-end lab uses an array in browser memory that resets on reload.'],['What does preventDefault do?', 'It stops the button from triggering the normal form submission.']]},
+    {title:'Why hire me?',time:'4:10–5:05',script:`I believe a web development company should hire me because I'm learning both the technical side and the user side of building websites. Through my Sweet Crumbs project, I've worked with HTML forms, responsive CSS layouts, and JavaScript interactions. I've also learned the importance of debugging. If something doesn't work, I inspect the code, make a change, and test again. I know I still have more to learn, but I bring motivation, attention to detail, and a willingness to solve problems. I'm excited to keep building websites that look good and work well for users. Thank you.`,qa:[['What did debugging teach you?', 'To test each change, confirm that it works, and consider the user experience.'],['What would you improve next?', 'Continue improving accessibility, usability, validation, and deeper JavaScript skills.']]}
+  ];
+  let current=0; let startTime=Date.now(); let lastFocus=null; const slides=[...document.querySelectorAll('.slide')]; const rail=[...document.querySelectorAll('[data-goto]')];
+  const nextButton=document.getElementById('next'),prevButton=document.getElementById('prev');
+  const notesPanel=document.getElementById('speaker-notes'),notesShade=document.getElementById('notes-shade'),notesBtn=document.getElementById('notes-btn');
+  function goTo(index){ if(index<0||index>=slides.length)return; current=index; slides.forEach((s,i)=>{s.classList.toggle('active',i===index);s.hidden=i!==index});rail.forEach((b,i)=>{b.classList.toggle('active',i===index); if(i===index)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});prevButton.disabled=index===0;nextButton.disabled=index===slides.length-1;nextButton.textContent=index===slides.length-1?'The end ✓':'Next →';document.getElementById('slide-label').textContent=String(index+1).padStart(2,'0')+' / 05';document.getElementById('progress-bar').style.width=((index+1)/slides.length*100)+'%';document.title=notes[index].title+' | CS 310 Presentation';if(notesPanel.classList.contains('open'))renderNotes();window.scrollTo({top:0,behavior:'instant'});}
+  function renderNotes(){const n=notes[current];document.getElementById('notes-title').textContent='Slide '+(current+1)+' — '+n.title;document.getElementById('notes-time').textContent=n.time;const container=document.getElementById('notes-script');container.replaceChildren();const p=document.createElement('p');p.textContent=n.script;container.appendChild(p);const questions=document.getElementById('notes-qa');questions.replaceChildren();n.qa.forEach(([q,a])=>{const card=document.createElement('div');card.className='qa';const heading=document.createElement('strong');heading.textContent=q;const answer=document.createElement('p');answer.textContent=a;card.append(heading,answer);questions.appendChild(card)});}
+  function toggleNotes(show){const open=typeof show==='boolean'?show:!notesPanel.classList.contains('open');if(open){lastFocus=document.activeElement;renderNotes();notesPanel.classList.add('open');notesShade.classList.add('open');notesPanel.setAttribute('aria-hidden','false');notesBtn.setAttribute('aria-expanded','true');notesPanel.focus();}else{notesPanel.classList.remove('open');notesShade.classList.remove('open');notesPanel.setAttribute('aria-hidden','true');notesBtn.setAttribute('aria-expanded','false');if(lastFocus&&lastFocus.focus)lastFocus.focus();}}
+  rail.forEach((b,i)=>b.addEventListener('click',()=>goTo(i)));nextButton.addEventListener('click',()=>goTo(current+1));prevButton.addEventListener('click',()=>goTo(current-1));notesBtn.addEventListener('click',()=>toggleNotes());notesShade.addEventListener('click',()=>toggleNotes(false));document.getElementById('close-notes').addEventListener('click',()=>toggleNotes(false));
+  document.getElementById('fullscreen-btn').addEventListener('click',async()=>{try{if(!document.fullscreenElement){await document.documentElement.requestFullscreen()}else{await document.exitFullscreen()}}catch(e){alert('Fullscreen is not available in this browser. You can still present using the browser window.')}});
+  document.addEventListener('keydown',(event)=>{const tag=document.activeElement?.tagName?.toLowerCase();const typing=tag==='input'||tag==='textarea'||tag==='select';if(event.key==='Escape'&&notesPanel.classList.contains('open')){toggleNotes(false);return}if(event.key.toLowerCase()==='n'&&!typing){event.preventDefault();toggleNotes();return}if(event.key.toLowerCase()==='f'&&!typing){document.getElementById('fullscreen-btn').click();return}if(typing||notesPanel.classList.contains('open'))return;if(event.key==='ArrowRight'||event.key==='PageDown'||event.key===' '){event.preventDefault();goTo(current+1)}else if(event.key==='ArrowLeft'||event.key==='PageUp'){event.preventDefault();goTo(current-1)}else if(/^[1-5]$/.test(event.key)){goTo(Number(event.key)-1)}});
+  document.getElementById('timer-reset').addEventListener('click',()=>{startTime=Date.now();document.getElementById('timer').textContent='00:00';});
+  setInterval(()=>{const seconds=Math.floor((Date.now()-startTime)/1000);document.getElementById('timer').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0')},1000);
+  const htmlDemo=document.getElementById('html-demo-form');htmlDemo.addEventListener('submit',e=>{e.preventDefault();document.getElementById('html-status').textContent='✓ Valid email format. HTML allowed the form to submit.'});document.getElementById('demo-email').addEventListener('input',()=>{document.getElementById('html-status').textContent='' });
+  const device=document.getElementById('device'),desktopBtn=document.getElementById('desktop-btn'),mobileBtn=document.getElementById('mobile-btn');function setDevice(mobile){device.classList.toggle('mobile',mobile);desktopBtn.classList.toggle('selected',!mobile);mobileBtn.classList.toggle('selected',mobile);desktopBtn.setAttribute('aria-pressed',String(!mobile));mobileBtn.setAttribute('aria-pressed',String(mobile))}desktopBtn.addEventListener('click',()=>setDevice(false));mobileBtn.addEventListener('click',()=>setDevice(true));
+  // This interactive demo intentionally mirrors the patterns in the original Lab 3.
+  const customerForm=document.getElementById('customer-demo-form');const customers=[];
+  customerForm.addEventListener('submit',event=>{event.preventDefault();if(!customerForm.reportValidity())return;const customer={id:customers.length+1,firstName:document.getElementById('first-name-demo').value.trim(),lastName:document.getElementById('last-name-demo').value.trim(),email:document.getElementById('customer-email-demo').value.trim()};if(!customer.firstName||!customer.lastName){document.getElementById('customer-status').textContent='Please enter a name with at least one non-space character.';return}customers.push(customer);const empty=document.getElementById('empty-note');if(empty)empty.remove();const li=document.createElement('li');li.textContent=customer.id+'. '+customer.firstName+' '+customer.lastName+' ('+customer.email+')';document.getElementById('customer-list-demo').appendChild(li);document.getElementById('customer-count').textContent=customers.length+(customers.length===1?' customer':' customers');document.getElementById('customer-status').textContent='✓ Customer '+customer.firstName+' was added successfully.';customerForm.reset();});
+  document.getElementById('clear-demo').addEventListener('click',()=>{customers.length=0;document.getElementById('customer-list-demo').replaceChildren();const li=document.createElement('li');li.id='empty-note';li.style.cssText='color:#8a9ab0;list-style:none;margin-left:-17px';li.textContent='No customer added yet.';document.getElementById('customer-list-demo').appendChild(li);document.getElementById('customer-count').textContent='0 customers';document.getElementById('customer-status').textContent='Customer list cleared.';});
+  let touchX=null;document.getElementById('stage').addEventListener('touchstart',e=>{if(e.touches.length===1)touchX=e.touches[0].clientX},{passive:true});document.getElementById('stage').addEventListener('touchend',e=>{if(touchX===null)return;const target=e.target;if(target.closest('input,button,form,.code-panel')){touchX=null;return}const diff=e.changedTouches[0].clientX-touchX;if(Math.abs(diff)>100)goTo(current+(diff<0?1:-1));touchX=null},{passive:true});
+  goTo(0);
+})();
+</script>
+</body>
+</html>

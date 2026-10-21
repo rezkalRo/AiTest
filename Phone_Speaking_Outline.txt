@@ -1,0 +1,361 @@
+CS 310 — WEB DEVELOPMENT EXAM
+PHONE-FRIENDLY PRESENTATION OUTLINE
+===================================
+
+TARGET: About 5 minutes
+5 slides | Speak naturally, don't read the code aloud
+TIP: Scroll to each slide as you present.
+      The QUICK REFERENCE is for questions afterward.
+
+
+===================================
+SLIDE 1 — INTRODUCTION
+TIME: 0:00–0:40
+===================================
+
+MAIN IDEA:
+What I learned, what I built, why hire me.
+
+SAY:
+"Hello. Today I'm going to talk about what
+I've learned in Web Development and how
+I used those skills in my class projects.
+
+The three main technologies I've practiced
+are HTML, CSS, and JavaScript.
+
+HTML creates the structure, CSS controls
+the appearance, and JavaScript makes the
+page interactive.
+
+One of my main projects is the Sweet Crumbs
+Cookie Shop website, which helped me connect
+all three concepts."
+
+
+===================================
+SLIDE 2 — HTML: THE STRUCTURE
+TIME: 0:40–1:35
+===================================
+
+MAIN IDEA:
+HTML = the content and structure.
+
+POINT TO:
+Sweet Crumbs customer form (Lab 2).
+
+SAY:
+"HTML stands for HyperText Markup Language.
+It gives a webpage its structure, including
+headings, paragraphs, images, navigation,
+and forms.
+
+In my Sweet Crumbs project, I created
+different pages for the home page, menu,
+location, and customer information.
+
+In Lab 2, I created a customer form that
+lets visitors enter their information.
+
+For example, I used a label and an email
+input. The label explains the field,
+type='email' checks basic email format,
+and 'required' prevents an empty submission.
+
+I also used semantic elements like header,
+main, section, and footer to organize the
+site clearly."
+
+REAL HTML EXAMPLE (customer.html):
+<label for="email">Email Address</label>
+<input type="email"
+       id="email"
+       name="email"
+       required>
+
+REMEMBER:
+- <label> describes the field.
+- <input> accepts customer information.
+- required = the field cannot be left empty.
+- HTML is the structure, not the styling.
+
+
+===================================
+SLIDE 3 — CSS: THE PRESENTATION
+TIME: 1:35–2:35
+===================================
+
+MAIN IDEA:
+CSS = appearance and responsive design.
+
+SAY:
+"CSS stands for Cascading Style Sheets.
+It controls colors, fonts, spacing, buttons,
+and the overall layout.
+
+For my Sweet Crumbs website, I used CSS
+to make the pages consistent and easier
+for customers to read.
+
+I also learned responsive design.
+That means the layout changes to fit
+different screen sizes.
+
+Here, the form uses a two-column CSS Grid
+on larger screens. When the screen is
+760 pixels wide or smaller, a media query
+changes it to one column.
+
+This makes the form easier to use on a
+phone without horizontal scrolling."
+
+REAL CSS EXAMPLE (style.css):
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 760px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+REMEMBER:
+- display: grid = use a grid layout.
+- 1fr 1fr = two equal columns.
+- @media = special styles for screen sizes.
+- 1fr = one column on smaller screens.
+
+
+===================================
+SLIDE 4 — JAVASCRIPT: BEHAVIOR
+TIME: 2:35–4:10
+===================================
+
+MAIN IDEA:
+JavaScript = actions, events, and DOM updates.
+
+SAY:
+"JavaScript is what makes the website
+interactive instead of just static.
+
+For Lab 3, I added JavaScript to the
+customer information form.
+
+First, I used an event listener to detect
+when the customer clicks Submit.
+
+Then I used preventDefault to stop the
+normal form submission and avoid reloading
+the page.
+
+The code checks whether the required
+fields are valid. It uses getElementById
+to collect values such as the customer's
+first name, last name, and email.
+
+Next, it creates a customer object.
+An object groups related information
+together using properties and values.
+
+I store those customer objects in an array
+using customers.push(customer).
+
+I also use the DOM, or Document Object
+Model, to update the webpage. For example,
+the code creates a list item showing the
+submitted customer's name and email.
+
+Finally, a confirmation message appears
+and the form is reset.
+
+This project taught me how HTML and
+JavaScript work together."
+
+REAL JAVASCRIPT EXCERPTS (script.js):
+const customers = [];
+
+submitButton.addEventListener(
+    "click",
+    function (event) {
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        const customer = {
+            id: customers.length + 1,
+            firstName: document
+                .getElementById("first-name")
+                .value.trim(),
+            lastName: document
+                .getElementById("last-name")
+                .value.trim(),
+            email: document
+                .getElementById("email")
+                .value.trim()
+        };
+
+        customers.push(customer);
+    }
+);
+
+NOTE: Shortened presentation excerpt of your
+real file. The complete code also handles
+other fields, logs the array, updates the
+page, shows a message, and resets the form.
+
+DOM EXAMPLE FROM YOUR LAB:
+const newCustomer = document.createElement("li");
+
+newCustomer.textContent =
+    customer.id + ". " + customer.firstName +
+    " " + customer.lastName +
+    " (" + customer.email + ")";
+
+document.getElementById("customer-list")
+    .appendChild(newCustomer);
+
+REMEMBER:
+- Event listener = waits for a button click.
+- Callback function = runs after the event.
+- preventDefault() = prevents normal submit.
+- reportValidity() = checks HTML constraints.
+- getElementById() = finds an HTML element.
+- .value = gets what the customer entered.
+- .trim() = removes leading/trailing spaces.
+- Object literal = { property: value }.
+- Array = stores multiple customer objects.
+- .push() = adds an item to the array.
+- DOM = webpage represented as elements.
+- createElement("li") = makes a list item.
+- textContent = puts text into an element.
+- appendChild() = adds it to the page.
+- form.reset() = resets input fields.
+
+IMPORTANT ACCURACY NOTE:
+This lab stores customers in a temporary
+browser array, NOT a database. The array
+disappears when the page is reloaded.
+The password is NOT placed in that array.
+
+
+===================================
+SLIDE 5 — WHY HIRE ME?
+TIME: 4:10–5:05
+===================================
+
+MAIN IDEA:
+Practical experience + willingness to learn.
+
+SAY:
+"I believe a web development company
+should hire me because I'm learning both
+the technical side and the user side of
+building websites.
+
+With the Sweet Crumbs project, I've worked
+with HTML forms, CSS responsive layouts,
+and JavaScript interactions.
+
+I've also learned that debugging is an
+important part of development. If a button
+doesn't work or an element has the wrong ID,
+I need to inspect the code, fix it,
+and test again.
+
+I know I still have more to learn, but
+I'm comfortable practicing, solving
+problems, and improving my work.
+
+I'm excited to keep building websites
+that look good and work well for users.
+
+Thank you."
+
+
+===================================
+QUICK REFERENCE — IF PROFESSOR ASKS
+(DO NOT READ THIS WHOLE PART ALOUD)
+===================================
+
+Q: WHAT IS THE DOM?
+A: Document Object Model. It is the browser's
+   representation of the HTML page. JavaScript
+   can access and change its elements.
+
+Q: WHAT IS DOM MANIPULATION?
+A: Changing elements on the page with
+   JavaScript, such as adding customer names.
+
+Q: WHAT IS AN EVENT LISTENER?
+A: Code that waits for an action such as
+   a click and then runs a function.
+
+Q: WHAT IS AN OBJECT LITERAL?
+A: A group of related properties and values.
+   Example:
+   { firstName: "John", email: "j@example.com" }
+
+Q: WHAT IS AN ARRAY?
+A: A collection of values. My array stores
+   multiple customer objects.
+
+Q: WHAT IS THE DIFFERENCE BETWEEN
+   HTML, CSS, AND JAVASCRIPT?
+A: HTML = structure.
+   CSS = design.
+   JavaScript = interaction.
+
+Q: WHAT IS RESPONSIVE DESIGN?
+A: A layout that adapts to the screen size.
+   My CSS uses a media query at 760px.
+
+Q: WHAT DOES preventDefault() DO?
+A: Stops the browser's standard action.
+   I use it to handle form data in JavaScript.
+
+Q: DOES THE FORM SAVE TO A DATABASE?
+A: No. It is a front-end lab demo.
+   Customers are stored only until refresh.
+
+Q: HOW DID YOU TEST YOUR WORK?
+A: I filled out the form, clicked Submit,
+   checked validation, and checked the
+   displayed customer information and console.
+
+Q: WHAT ABOUT THE HTML5 CANVAS ASSIGNMENT?
+A: JavaScript uses getContext("2d"), sets
+   fillStyle to red, and uses
+   fillRect(0, 0, 150, 75)
+   to draw a red rectangle.
+
+
+===================================
+LAST-SECOND REMINDERS
+===================================
+
+1. DO NOT rush. Aim for ~5 minutes.
+2. Look up at the professor between points.
+3. Do not read code line by line.
+   Explain what it DOES.
+4. Your strongest examples:
+   HTML = email form
+   CSS = responsive form grid
+   JS = submit button / customers array / DOM
+5. End with "Thank you."
+
+PROJECT WEBSITE:
+https://rezkalro.github.io/sweet-crumbs/
+
+SOURCE LAB FILES:
+- Lab 2: customer.html, style.css
+- Lab 3: script.js, customer.html
+- Project 3: Hello_Canvas.js
+
+===================================
+END OF OUTLINE
+===================================
